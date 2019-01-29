@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Rent = sequelize.define(
     'Rent',
     {
-      id_item: { type: DataTypes.INTEGER, allowNull: false },
+      item_id: { type: DataTypes.INTEGER, allowNull: false },
       start_rent: { type: DataTypes.DATE, allowNull: false },
       end_rent: { type: DataTypes.DATE, allowNull: false },
       delivery_location: { type: DataTypes.STRING, allowNull: false },
