@@ -1,11 +1,11 @@
 {
-  "name": "nodejs-sequelize",
+  "name": "rentnesia-backend",
   "version": "1.0.0",
   "description": "rent things and live ligther",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "Furqan Maudhudy",
   "license": "MIT",

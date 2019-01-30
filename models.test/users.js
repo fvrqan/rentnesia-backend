@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
-      user_type: { type: DataTypes.ENUM('Admin', 'User'), allowNull: false },
+      user_type: { type: DataTypes.ENUM('Admin', 'User') },
       profile_photo: { type: DataTypes.STRING(100) },
       full_name: {
         allowNull: false,

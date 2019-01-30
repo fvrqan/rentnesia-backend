@@ -2,15 +2,14 @@ const express = require('express')
 const router = express.Router()
 
 const UserController = require('../controllers/UserController')
+const isAuthenticated = require('../middlewares').isAuthenticated
 
-router
-  .route('/')
-  .get(UserController.getUser)
-  .post(UserController.createUser)
+router.get('/', isAuthenticated, UserController.getUser)
 
 router
   .route('/:id')
-  .delete(UserController.deleteUserById)
-  .put(UserController.updateUserById)
+  .get(UserController.getUserById)
+  // .delete(UserController.deleteUserById)
+  // .put(UserController.updateUserById)
 
 module.exports = router
