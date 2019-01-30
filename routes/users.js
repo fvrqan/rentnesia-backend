@@ -9,7 +9,7 @@ router.get('/', isAuthenticated, UserController.getUser)
 router
   .route('/:id')
   .get(UserController.getUserById)
-  // .delete(UserController.deleteUserById)
-  // .put(UserController.updateUserById)
+  .delete(UserController.deleteUserById)
+  .put(UserController.updateUserById)
 
 module.exports = router

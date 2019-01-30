@@ -11,7 +11,15 @@ module.exports = {
       name: { type: Sequelize.STRING(100), allowNull: false },
       description: { type: Sequelize.STRING(100), allowNull: false },
       quantity: { type: Sequelize.STRING(100), allowNull: false },
-      price_per_unit: { type: Sequelize.STRING(100), allowNull: false }
+      price_per_unit: { type: Sequelize.STRING(100), allowNull: false },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
     })
   },
   down: (queryInterface, Sequelize) => {

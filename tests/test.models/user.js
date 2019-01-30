@@ -9,13 +9,19 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
-      user_type: { type: DataTypes.ENUM('Admin', 'User') },
+      user_type: { type: DataTypes.ENUM('Admin', 'User'), allowNull: false },
       profile_photo: { type: DataTypes.STRING(100) },
-      full_name: {
+      first_name: {
         allowNull: false,
         type: DataTypes.STRING(30),
         defaultValue: '',
         validate: { len: [0, 200], isAlphanumeric: true, notEmpty: true }
+      },
+      last_name: {
+        type: Sequelize.STRING(30),
+        allowNull: false,
+        defaultValue: '',
+        validate: { len: [0, 200], isAlphanumeric: true, defaultValue: '' }
       },
       email: {
         type: DataTypes.STRING(64),
