@@ -4,9 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     'order',
     {
       address: { allowNull: true, type: DataTypes.STRING(100) },
-      pick_up: { type: DataTypes.DATE, allowNull: false },
-      // payment: { type: DataTypes.STRING(100), allowNull: false },
-      notes: { type: DataTypes.STRING(100), allowNull: true }
+      pickup_time: { type: DataTypes.DATE, allowNull: false },
+      notes: { type: DataTypes.STRING(100), allowNull: true },
+      payment: { type: DataTypes.STRING(100), allowNull: false },
       // promo_code: { type: DataTypes.STRING(12), allowNull: true }
     },
     {}

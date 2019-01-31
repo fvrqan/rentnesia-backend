@@ -8,8 +8,9 @@ module.exports = {
         autoIncrement: true
       },
       address: { allowNull: true, type: Sequelize.STRING(100) },
-      pick_up: { type: Sequelize.DATE, allowNull: false },
+      pickup_time: { type: Sequelize.DATE, allowNull: false },
       notes: { type: Sequelize.STRING(100), allowNull: true },
+      payment: { type: Sequelize.STRING(100), allowNull: false },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

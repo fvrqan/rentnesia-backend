@@ -6,8 +6,9 @@ exports.createOrderById = async (req, res) => {
     await Order.create(
       {
         address: req.body.address,
-        pick_up: req.body.pick_up,
-        notes: req.body.notes
+        pickup_time: req.body.pickup_time,
+        notes: req.body.notes,
+        payment: req.body.payment
       },
       { where: { id: req.params.id } }
     )
