@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     'user',
     {
       user_type: {
-        type: DataTypes.ENUM('admin', 'customer'),
+        type: DataTypes.ENUM('staff', 'customer'),
         allowNull: false
       }, // user_photo: { type: DataTypes.STRING(100) },
       username: {
