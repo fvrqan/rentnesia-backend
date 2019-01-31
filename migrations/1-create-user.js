@@ -9,26 +9,23 @@ module.exports = {
         autoIncrement: true
       },
       user_type: {
-        type: Sequelize.ENUM('admin', 'customer'),
+        type: Sequelize.ENUM('staff', 'customer'),
         allowNull: false
       },
-      profile_photo: { type: Sequelize.STRING(100) },
       username: {
-        type: Sequelize.STRING(12),
+        type: Sequelize.STRING(20),
         allowNull: false,
         unique: true
       },
       first_name: {
         type: Sequelize.STRING(30),
         allowNull: false,
-        defaultValue: '',
-        validate: { len: [0, 200], isAlphanumeric: true }
+        defaultValue: ''
       },
       last_name: {
         type: Sequelize.STRING(30),
         allowNull: false,
-        defaultValue: '',
-        validate: { len: [0, 200], isAlphanumeric: true }
+        defaultValue: ''
       },
       email: {
         type: Sequelize.STRING(64),

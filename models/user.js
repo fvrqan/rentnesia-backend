@@ -8,9 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.ENUM('admin', 'customer'),
         allowNull: false
       },
-      profile_photo: { type: DataTypes.STRING(100) },
       username: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.STRING(20),
         allowNull: false,
         unique: true,
         validate: { len: [1, 10], isLowercase: true, notEmpty: true }
@@ -19,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING(30),
         defaultValue: '',
-        validate: { len: [0, 200], isAlphanumeric: true }
+        // validate: { len: [0, 200], isAlphanumeric: false }
       },
       last_name: {
         type: DataTypes.STRING(30),
         allowNull: false,
         defaultValue: '',
-        validate: { len: [0, 200], isAlphanumeric: true }
+        // validate: { len: [0, 200], isAlphanumeric: false }
       },
       email: {
         type: DataTypes.STRING(64),
@@ -52,6 +51,9 @@ module.exports = (sequelize, DataTypes) => {
     {}
   )
 
-  user.associate = function(models) {}
+  user.associate = function(models) {
+    // associations can be defined here
+  }
+
   return user
 }
