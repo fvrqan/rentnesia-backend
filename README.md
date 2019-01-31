@@ -34,11 +34,15 @@ Install `mysql` database management system
 
 ### Development
 
-1.  Run: `npm run dev` or `yarn dev` to run server
+Run: `npm run dev` or `yarn dev` to run server
+
+### API Testing
+
+Install: `POSTMAN` or `INSOMNIA` to test API
 
 ### Production
 
-1.  Run: `npm run start` or `yarn start` to run server
+Run: `npm run start` or `yarn start` to run server
 
 ## API Endpoints
 
