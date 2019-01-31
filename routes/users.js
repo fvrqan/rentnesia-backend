@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const UserController = require('../controllers/UserController')
-const isAuthenticated = require('../middlewares').isAuthenticated
+// const isAuthenticated = require('../middlewares').isAuthenticated
 
 router.get('/', UserController.getUser)
 // isAuthenticated, put in router get after test

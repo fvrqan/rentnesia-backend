@@ -1,7 +1,7 @@
 const Order = require('../models').order
 
 // Add new order
-exports.CreateOrderById = async (req, res) => {
+exports.createOrderById = async (req, res) => {
   try {
     await Order.create(
       {

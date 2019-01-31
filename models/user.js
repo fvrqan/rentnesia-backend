@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       user_type: {
         type: DataTypes.ENUM('admin', 'customer'),
         allowNull: false
-      },
+      }, // user_photo: { type: DataTypes.STRING(100) },
       username: {
         type: DataTypes.STRING(20),
         allowNull: false,
@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
       first_name: {
         allowNull: false,
         type: DataTypes.STRING(30),
-        defaultValue: '',
+        defaultValue: ''
         // validate: { len: [0, 200], isAlphanumeric: false }
       },
       last_name: {
         type: DataTypes.STRING(30),
         allowNull: false,
-        defaultValue: '',
+        defaultValue: ''
         // validate: { len: [0, 200], isAlphanumeric: false }
       },
       email: {
@@ -41,12 +41,12 @@ module.exports = (sequelize, DataTypes) => {
       address: { allowNull: true, type: DataTypes.STRING(100) },
       city: { allowNull: true, type: DataTypes.STRING(50) },
       zip_code: { allowNull: false, type: DataTypes.STRING(6) },
-      phone: { allowNull: false, type: DataTypes.STRING(20) },
-      status: {
-        allowNull: false,
-        defaultValue: 'active',
-        type: DataTypes.STRING(32)
-      }
+      phone: { allowNull: false, type: DataTypes.STRING(20) }
+      // status: {
+      //   allowNull: false,
+      //   defaultValue: 'active',
+      //   type: DataTypes.STRING(32)
+      // }
     },
     {}
   )
