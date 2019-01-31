@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/api/v1/users', require('./routes/users'))
 app.use('/api/v1/auth', require('./routes/auth'))
+app.use('/api/v1/orders', require('./routes/orders'))
 // app.use('/api/v1/item', require('./routes/items'))
 
 // models.sequelize.sync().then(() => {
