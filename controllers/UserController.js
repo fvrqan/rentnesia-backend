@@ -33,12 +33,10 @@ exports.updateUserById = async (req, res) => {
     await User.update(
       {
         user_type: req.body.user_type,
-        profile_photo: req.body.profile_type,
+        user_photo: req.body.user_photo,
         username: req.body.username,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        email: req.body.email,
-        password: req.body.password,
         address: req.body.address,
         city: req.body.city,
         zip_code: req.body.zip_code,
@@ -52,3 +50,4 @@ exports.updateUserById = async (req, res) => {
     res.json(error)
   }
 }
+
