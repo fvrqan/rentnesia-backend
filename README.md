@@ -7,7 +7,7 @@ Rentnesia, a modern way to rent and store things online in your neighborhood
 - [**Nodejs**](http://nodejs.org/) Server Runtime Environment
 - [**Expressjs**](https://expressjs.com/) Node.js Framework
 - [**Nodemailer**](https://nodemailer.com//) Email Delivery Service
-- [**Sequalizejs**](http://docs.sequelizejs.com//) ORM - Object Relational Mapping
+- [**Sequalizejs**](http://docs.sequelizejs.com//) ORM That Talks to Database
 - [**MySQL**](http://mysql.com/) SQL Database Management System
 - [**AWS**](http://aws.amazon.com/) Amazon Web Services
 - [**Heroku**](http://heroku.com/) Backend Deployment System
