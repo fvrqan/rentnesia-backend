@@ -33,7 +33,7 @@ exports.updateUserById = async (req, res) => {
     await User.update(
       {
         user_type: req.body.user_type,
-        user_photo: req.body.user_photo,
+        // user_photo: req.body.user_photo,
         username: req.body.username,
         first_name: req.body.first_name,
         last_name: req.body.last_name,

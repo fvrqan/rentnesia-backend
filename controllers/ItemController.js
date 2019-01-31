@@ -1,6 +1,6 @@
 const Item = require('../models').item
 
-// Add new item
+// Add or post new item
 exports.createItemById = async (req, res) => {
   try {
     await Item.create(
@@ -46,7 +46,7 @@ exports.deleteItemById = async (req, res) => {
   }
 }
 
-// Update Item by Id
+// Update item by Id
 exports.updateItemById = async (req, res) => {
   try {
     await Item.update(
