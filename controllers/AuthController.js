@@ -34,8 +34,6 @@ exports.signupUser = async (req, res) => {
 
     req.body.password = await bcrypt.hash(req.body.password, salt)
 
-    console.log(req.body)
-
     const user = await User.create({
       user_type: req.body.user_type,
       profile_photo: req.body.profile_type,
