@@ -11,33 +11,34 @@ module.exports = {
       user_type: {
         type: Sequelize.ENUM('staff', 'customer'),
         allowNull: false
+      }, profile_picture: {
+        type: Sequelize.STRING,
+        allowNull: t
       },
       username: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true
       },
       first_name: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         allowNull: false,
         defaultValue: ''
       },
       last_name: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         allowNull: false,
         defaultValue: ''
       },
       email: {
-        type: Sequelize.STRING(64),
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true
       },
-      password: { type: Sequelize.STRING(100), allowNull: false },
+      password: { type: Sequelize.STRING, allowNull: false },
 
-      address: { type: Sequelize.STRING(100), allowNull: true },
-      city: { type: Sequelize.STRING(50), allowNull: true },
-      zip_code: { type: Sequelize.STRING(6), allowNull: false },
-      phone: { type: Sequelize.STRING(20), allowNull: false },
+      address: { type: Sequelize.STRING allowNull: true },
+      phone: { type: Sequelize.STRING, allowNull: false },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
