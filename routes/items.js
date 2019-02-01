@@ -4,14 +4,16 @@ const router = express.Router()
 const ItemController = require('../controllers/ItemController')
 // const isAuthenticated = require('../middlewares').isAuthenticated
 
-router.get('/', ItemController.getItem)
-// isAuthenticated, put in router get after test
+router
+  .get('/', ItemController.getItem) // isAuthenticated, put in router get after test
+  .get('/', ItemController.getItem)
+
 
 router
-  .route('/:id')
+.route('/items/:id')
+.post(ItemController.createItemById)
   .get(ItemController.getItemById)
-  .delete(ItemController.deleteItemById)
   .put(ItemController.updateItemById)
-  .post(ItemController.createItemById)
+  .delete(ItemController.deleteItemById)
 
 module.exports = router

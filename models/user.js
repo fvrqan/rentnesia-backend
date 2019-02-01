@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     'user',
     {
       user_type: {
-        type: DataTypes.ENUM('customer', 'owner' ),
+        type: DataTypes.ENUM('customer', 'owner'),
         allowNull: false
-      }, 
-      profile_picture: { type: DataTypes.STRING},
+      },
+      profile_picture: { type: DataTypes.STRING },
       username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -36,11 +36,15 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: true
         }
       },
-      password: { type: DataTypes.STRING, allowNull: false, validate: { len: [1, 20], isPassword: true} },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: { len: [1, 20], isPassword: true }
+      },
       country: { allowNull: true, type: DataTypes.STRING },
-      province: { allowNull: true, type: DataTypes.STRING},
-      city: { allowNull: true, type: DataTypes.STRING},
-      phone: { allowNull: false, type: DataTypes.STRING},
+      province: { allowNull: true, type: DataTypes.STRING },
+      city: { allowNull: true, type: DataTypes.STRING },
+      phone: { allowNull: false, type: DataTypes.STRING },
       status: {
         allowNull: true,
         defaultValue: 'active',
@@ -51,7 +55,14 @@ module.exports = (sequelize, DataTypes) => {
   )
 
   user.associate = function(models) {
-    // associations can be defined here
+    models.user.hasMany(models.item, {
+      foreignKey: 'id_owner',
+      sourceKey: 'id'
+    })
+    models.user.hasMany(models.user_item, {
+      foreignKey: 'id_user',
+      sourceKey: 'id'
+    })
   }
 
   return user

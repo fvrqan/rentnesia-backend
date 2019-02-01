@@ -3,18 +3,20 @@ module.exports = (sequelize, DataTypes) => {
   const item = sequelize.define(
     'item',
     {
-      id_: { type: DataTypes.STRING(100), allowNull: false },
-
-      // item_photo: { type: DataTypes.STRING(100) },
-      name: { type: DataTypes.STRING(100), allowNull: false },
-      description: { type: DataTypes.STRING(100), allowNull: false },
-      quantity: { type: DataTypes.STRING(100), allowNull: false },
-      price: { type: DataTypes.STRING(100), allowNull: false } 
+      id_owner: { type: DataTypes.INTEGER, allowNull: false },
+      images: { type: DataTypes.STRING, allowNull: false },
+      name: { type: DataTypes.STRING, allowNull: false },
+      description: { type: DataTypes.STRING, allowNull: false },
+      quantity: { type: DataTypes.STRING, allowNull: false },
+      price: { type: DataTypes.STRING, allowNull: false } 
     },
     {}
   )
-  item.associate = function(models) {
-    // associations can be defined here
-  }
+  item.associate = function (models) {    
+    models.item.belongsTo(models.user, {   
+      foreignKey: "owner",
+      targetKey: "id"
+    });
+  };
   return item
 }
