@@ -1,7 +1,7 @@
-'use strict'
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable("users", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -9,7 +9,7 @@ module.exports = {
         autoIncrement: true
       },
       user_type: {
-        type: Sequelize.ENUM('staff', 'customer'),
+        type: Sequelize.ENUM("staff", "customer"),
         allowNull: false
       },
       username: {
@@ -20,12 +20,12 @@ module.exports = {
       first_name: {
         type: Sequelize.STRING(30),
         allowNull: false,
-        defaultValue: ''
+        defaultValue: ""
       },
       last_name: {
         type: Sequelize.STRING(30),
         allowNull: false,
-        defaultValue: ''
+        defaultValue: ""
       },
       email: {
         type: Sequelize.STRING(64),
@@ -36,8 +36,8 @@ module.exports = {
 
       address: { type: Sequelize.STRING(100), allowNull: true },
       city: { type: Sequelize.STRING(50), allowNull: true },
-      zip_code: { type: Sequelize.STRING(6), allowNull: false },
-      phone: { type: Sequelize.STRING(20), allowNull: false },
+      zip_code: { type: Sequelize.STRING(6), allowNull: true },
+      phone: { type: Sequelize.STRING(20), allowNull: true },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -46,9 +46,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    })
+    });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('users')
+    return queryInterface.dropTable("users");
   }
-}
+};
