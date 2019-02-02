@@ -36,7 +36,7 @@ exports.loginUser = async (req, res) => {
   }
 };
 
-exports.signupUser = async (req, res) => {
+exports.registerUser = async (req, res) => {
   try {
     const SALT_WORK_FACTOR = 12;
     const salt = await bcrypt.genSalt(SALT_WORK_FACTOR);
@@ -45,7 +45,7 @@ exports.signupUser = async (req, res) => {
 
     const user = await User.create({
       user_type: req.body.user_type,
-      // user_photo: req.body.user_photo,
+      image: req.body.image,
       username: req.body.username,
       first_name: req.body.first_name,
       last_name: req.body.last_name,

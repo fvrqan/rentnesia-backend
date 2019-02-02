@@ -1,5 +1,24 @@
 const Item = require('../models').item
 
+// Create pickup item order
+exports.createOrderById = async (req, res) => {
+  try {
+    await Order.create(
+      {
+        id_owner: userId,
+        pickup_time: req.body.pickup_time,
+        notes: req.body.notes,
+        payment: req.body.payment
+      },
+      { where: { id: req.params.id } }
+    )
+    const request = await Order.findById(req.params.id)
+    res.json({ request })
+  } catch (error) {
+    res.json(error)
+  }
+}
+
 // Add or post new item
 exports.createItemById = async (req, res) => {
   try {
